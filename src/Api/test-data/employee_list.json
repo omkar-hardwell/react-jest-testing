@@ -1,0 +1,34 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "name": "Omkar",
+      "designation": "React developer",
+      "department": "UI"
+    },
+    {
+      "id": 2,
+      "name": "Jigar",
+      "designation": "React developer",
+      "department": "UI"
+    },
+    {
+      "id": 3,
+      "name": "Rahul",
+      "designation": "Azure developer",
+      "department": "API"
+    },
+    {
+      "id": 4,
+      "name": "Vinoth",
+      "designation": "Azure developer",
+      "department": "API"
+    },
+    {
+      "id": 5,
+      "name": "Snehal",
+      "designation": "Azure developer",
+      "department": "API"
+    }
+  ]
+}

@@ -1,7 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React, { useEffect, useState } from "react";
+
+import EmployeeList from "./components/EmployeeList";
+import { getEmployeeList } from "./Api/dummyAPIs";
 
 function App() {
+  const [employeeList, setEmployeeList] = useState(null);
+  useEffect(() => {
+    fetchDetails();
+  }, []);
+
+  const fetchDetails = () => {
+    getEmployeeList().then((res) => setEmployeeList(res));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +31,8 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <EmployeeList employeeList={employeeList} />
     </div>
   );
 }

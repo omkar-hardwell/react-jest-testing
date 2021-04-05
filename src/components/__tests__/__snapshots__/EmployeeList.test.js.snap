@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test EmployeeList component with Zero data found 1`] = `
+Array [
+  <h1>
+    Employee Details
+  </h1>,
+  <hr />,
+  <p>
+    No records founds!
+  </p>,
+]
+`;
+
+exports[`Test EmployeeList component with data found 1`] = `
+Array [
+  <h1>
+    Employee Details
+  </h1>,
+  <hr />,
+  <div>
+    <b>
+      Employee ID :
+    </b>
+     
+    1
+  </div>,
+  <div>
+    <b>
+      Employee Name :
+    </b>
+     
+    Omkar
+  </div>,
+  <div>
+    <b>
+      Designation :
+    </b>
+     
+    React developer
+  </div>,
+  <div>
+    <b>
+      Department :
+    </b>
+     
+    UI
+  </div>,
+  <hr />,
+  <div>
+    <b>
+      Employee ID :
+    </b>
+     
+    2
+  </div>,
+  <div>
+    <b>
+      Employee Name :
+    </b>
+     
+    Jigar
+  </div>,
+  <div>
+    <b>
+      Designation :
+    </b>
+     
+    React developer
+  </div>,
+  <div>
+    <b>
+      Department :
+    </b>
+     
+    UI
+  </div>,
+  <hr />,
+]
+`;
+
+exports[`Test EmployeeList component with data not defined 1`] = `
+Array [
+  <h1>
+    Employee Details
+  </h1>,
+  <hr />,
+  <p>
+    No records founds!
+  </p>,
+]
+`;
