@@ -1,26 +1,37 @@
 // import { render, screen } from "@testing-library/react";
-import renderer from "react-test-renderer";
+import React from "react";
+import { shallowToJson } from "enzyme-to-json";
+import { shallow } from "enzyme";
+
 import EmployeeList from "../EmployeeList";
 
 describe("Test EmployeeList component with", () => {
-  it("data found", () => {
-    const dummyEmployeeList = {
-      employee: [
-        {
-          id: 1,
-          name: "Omkar",
-          designation: "React developer",
-          department: "UI",
-        },
-        {
-          id: 2,
-          name: "Jigar",
-          designation: "React developer",
-          department: "UI",
-        },
-      ],
-    };
+  let wrapper;
 
+  const dummyEmployeeList = {
+    employee: [
+      {
+        id: 1,
+        name: "Omkar",
+        designation: "React developer",
+        department: "UI",
+      },
+      {
+        id: 2,
+        name: "Jigar",
+        designation: "React developer",
+        department: "UI",
+      },
+    ],
+  };
+  const employeeListNotFound = null;
+  const employeeListWithZeroData = { employee: [] };
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("data found", () => {
     /**
      * Without snapshot, simply redering a component
      */
@@ -28,25 +39,27 @@ describe("Test EmployeeList component with", () => {
     /**
      * Snapshot testing
      */
-    const treeNode = renderer
-      .create(<EmployeeList employeeList={dummyEmployeeList} />)
-      .toJSON();
-    expect(treeNode).toMatchSnapshot();
+    React.useState = jest.fn((initialValue) => [dummyEmployeeList, () => {}]);
+    wrapper = shallow(<EmployeeList />);
+
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it("data not defined", () => {
-    const employeeListNotFound = null;
-    const treeNode = renderer
-      .create(<EmployeeList employeeList={employeeListNotFound} />)
-      .toJSON();
-    expect(treeNode).toMatchSnapshot();
+    React.useState = jest.fn((initialValue) => [
+      employeeListNotFound,
+      () => {},
+    ]);
+    wrapper = shallow(<EmployeeList />);
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it("Zero data found", () => {
-    const employeeListNotFound = { employee: [] };
-    const treeNode = renderer
-      .create(<EmployeeList employeeList={employeeListNotFound} />)
-      .toJSON();
-    expect(treeNode).toMatchSnapshot();
+    React.useState = jest.fn((initialValue) => [
+      employeeListWithZeroData,
+      () => {},
+    ]);
+    wrapper = shallow(<EmployeeList />);
+    expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });

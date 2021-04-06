@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const EmployeeList = ({ employeeList }) => {
+import { getEmployeeList } from "../Api/dummyAPIs";
+
+const EmployeeList = () => {
+  const [employeeList, setEmployeeList] = React.useState(null);
+  useEffect(() => {
+    fetchDetails();
+  }, []);
+
+  const fetchDetails = () => {
+    getEmployeeList().then((res) => setEmployeeList(res));
+  };
+
   return (
     <>
       <h1>Employee Details</h1>
