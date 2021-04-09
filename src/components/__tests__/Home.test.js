@@ -6,6 +6,8 @@ import { createMemoryHistory } from "history";
 
 import Home from "../Home";
 
+import "../../setupTests.js";
+
 describe("Home page test with", () => {
   it("render a link", () => {
     let component;
