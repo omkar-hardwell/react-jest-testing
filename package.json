@@ -50,7 +50,9 @@
     },
     "setupFilesAfterEnv": [
       "./src/setupTests.js"
-    ]
+    ],
+    "verbose": true,
+    "collectCoverage": true
   },
   "babel": {
     "presets": [
