@@ -47,7 +47,10 @@
   "jest": {
     "transform": {
       "^.+\\.(js)$": "babel-jest"
-    }
+    },
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js"
+    ]
   },
   "babel": {
     "presets": [
