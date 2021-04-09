@@ -47,12 +47,7 @@
   "jest": {
     "transform": {
       "^.+\\.(js)$": "babel-jest"
-    },
-    "setupFilesAfterEnv": [
-      "./src/setupTests.js"
-    ],
-    "verbose": true,
-    "collectCoverage": true
+    }
   },
   "babel": {
     "presets": [
