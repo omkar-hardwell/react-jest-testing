@@ -51,10 +51,12 @@
       "/node_modules/(?!my-package)(.*)"
     ]
   },
-  "presets": [
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    "@babel/plugin-syntax-jsx"
-  ]
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-jsx"
+    ]
+  }
 }
