@@ -52,12 +52,7 @@
     },
     "coverageReporters": [
       "json",
-      [
-        "lcov",
-        {
-          "projectRoot": "../../"
-        }
-      ]
+      "html"
     ]
   },
   "babel": {
