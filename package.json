@@ -49,11 +49,7 @@
   "jest": {
     "transform": {
       "^.+\\.(js)$": "babel-jest"
-    },
-    "coverageReporters": [
-      "json",
-      "html"
-    ]
+    }
   },
   "babel": {
     "presets": [
