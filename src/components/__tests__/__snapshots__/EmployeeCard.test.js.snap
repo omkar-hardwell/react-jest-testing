@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmployeeCard testing with render card 1`] = `
+<Card>
+  <CardContent>
+    <Image
+      as="img"
+      floated="right"
+      size="mini"
+      src="steve.jpg"
+      ui={true}
+    />
+    <CardHeader>
+      Omkar
+    </CardHeader>
+    <CardMeta>
+      Emp ID - 
+      1
+    </CardMeta>
+    <CardMeta>
+      Designation - 
+      React developer
+    </CardMeta>
+    <CardMeta>
+      Department - 
+      UI
+    </CardMeta>
+  </CardContent>
+  <CardContent
+    extra={true}
+  >
+    <div
+      className="ui two buttons"
+    >
+      <Button
+        as="button"
+        basic={true}
+        color="green"
+      >
+        Edit
+      </Button>
+      <Button
+        as="button"
+        basic={true}
+        color="red"
+      >
+        Delete
+      </Button>
+    </div>
+  </CardContent>
+</Card>
+`;

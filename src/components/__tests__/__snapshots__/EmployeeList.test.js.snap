@@ -1,92 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test EmployeeList component with Zero data found 1`] = `
-<Fragment>
-  <h1>
-    Employee Details
-  </h1>
-  <hr />
-  <p>
-    No records founds!
-  </p>
-</Fragment>
-`;
-
 exports[`Test EmployeeList component with data found 1`] = `
 <Fragment>
-  <h1>
-    Employee Details
-  </h1>
-  <hr />
-  <div>
-    <b>
-      Employee ID :
-    </b>
-     
-    1
-  </div>
-  <div>
-    <b>
-      Employee Name :
-    </b>
-     
-    Omkar
-  </div>
-  <div>
-    <b>
-      Designation :
-    </b>
-     
-    React developer
-  </div>
-  <div>
-    <b>
-      Department :
-    </b>
-     
-    UI
-  </div>
-  <hr />
-  <div>
-    <b>
-      Employee ID :
-    </b>
-     
-    2
-  </div>
-  <div>
-    <b>
-      Employee Name :
-    </b>
-     
-    Jigar
-  </div>
-  <div>
-    <b>
-      Designation :
-    </b>
-     
-    React developer
-  </div>
-  <div>
-    <b>
-      Department :
-    </b>
-     
-    UI
-  </div>
-  <hr />
+  <Container>
+    <Divider
+      horizontal={true}
+    >
+      <Header
+        as="h4"
+      >
+        Employee Details
+      </Header>
+    </Divider>
+    <CardGroup>
+      <EmployeeCard
+        employee={
+          Object {
+            "department": "UI",
+            "designation": "React developer",
+            "id": 1,
+            "name": "Omkar",
+          }
+        }
+        key="1"
+      />
+      <EmployeeCard
+        employee={
+          Object {
+            "department": "UI",
+            "designation": "React developer",
+            "id": 2,
+            "name": "Jigar",
+          }
+        }
+        key="2"
+      />
+    </CardGroup>
+  </Container>
 </Fragment>
 `;
 
-exports[`Test EmployeeList component with data not defined 1`] = `
+exports[`Test EmployeeList component with data not defined, shows loading... 1`] = `
 <Fragment>
-  <h1>
-    Employee Details
-  </h1>
-  <hr />
-  <p>
-    No records founds!
-  </p>
+  <Container>
+    <Divider
+      horizontal={true}
+    >
+      <Header
+        as="h4"
+      >
+        Employee Details
+      </Header>
+    </Divider>
+    <Loader
+      active={true}
+      inline="centered"
+    />
+  </Container>
+</Fragment>
+`;
+
+exports[`Test EmployeeList component with zero data found 1`] = `
+<Fragment>
+  <Container>
+    <Divider
+      horizontal={true}
+    >
+      <Header
+        as="h4"
+      >
+        Employee Details
+      </Header>
+    </Divider>
+    <p>
+      No records founds!
+    </p>
+  </Container>
 </Fragment>
 `;

@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home page test with render a link 1`] = `
-<a
-  href="/employee"
-  onClick={[Function]}
+<div
+  className="ui container"
 >
-  Employee view
-</a>
+  <a
+    href="/employee"
+    onClick={[Function]}
+  >
+    Employee view
+  </a>
+</div>
 `;

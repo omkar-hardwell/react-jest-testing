@@ -47,7 +47,7 @@ describe("Test EmployeeList component with", () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
-  it("data not defined", () => {
+  it("data not defined, shows loading...", () => {
     React.useState = jest.fn((initialValue) => [
       employeeListNotFound,
       () => {},
@@ -56,7 +56,7 @@ describe("Test EmployeeList component with", () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
-  it("Zero data found", () => {
+  it("zero data found", () => {
     React.useState = jest.fn((initialValue) => [
       employeeListWithZeroData,
       () => {},

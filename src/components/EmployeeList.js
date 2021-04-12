@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
+import { Card, Container, Loader } from "semantic-ui-react";
 
 import { getEmployeeList } from "../Api/dummyAPIs";
+import EmployeeCard from "./EmployeeCard";
+
+import { Header, Divider } from "semantic-ui-react";
 
 const EmployeeList = () => {
   const [employeeList, setEmployeeList] = React.useState(null);
@@ -15,31 +19,24 @@ const EmployeeList = () => {
 
   return (
     <>
-      <h1>Employee Details</h1>
-      <hr />
-      {employeeList && employeeList.employee.length > 0 ? (
-        employeeList.employee.map((employee) => {
-          return (
-            <React.Fragment key={employee.id}>
-              <div>
-                <b>Employee ID :</b> {employee.id}
-              </div>
-              <div>
-                <b>Employee Name :</b> {employee.name}
-              </div>
-              <div>
-                <b>Designation :</b> {employee.designation}
-              </div>
-              <div>
-                <b>Department :</b> {employee.department}
-              </div>
-              <hr />
-            </React.Fragment>
-          );
-        })
-      ) : (
-        <p>No records founds!</p>
-      )}
+      <Container>
+        <Divider horizontal>
+          <Header as="h4">Employee Details</Header>
+        </Divider>
+        {employeeList ? (
+          employeeList.employee.length > 0 ? (
+            <Card.Group>
+              {employeeList.employee.map((employee) => {
+                return <EmployeeCard key={employee.id} employee={employee} />;
+              })}
+            </Card.Group>
+          ) : (
+            <p>No records founds!</p>
+          )
+        ) : (
+          <Loader active inline="centered" />
+        )}
+      </Container>
     </>
   );
 };
