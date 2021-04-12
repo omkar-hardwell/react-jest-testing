@@ -49,7 +49,16 @@
   "jest": {
     "transform": {
       "^.+\\.(js)$": "babel-jest"
-    }
+    },
+    "coverageReporters": [
+      "json",
+      [
+        "lcov",
+        {
+          "projectRoot": "../../"
+        }
+      ]
+    ]
   },
   "babel": {
     "presets": [
