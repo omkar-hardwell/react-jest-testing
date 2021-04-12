@@ -21,7 +21,7 @@ const EmployeeList = () => {
     <>
       <Container>
         <Divider horizontal>
-          <Header as="h4">Employee Detail</Header>
+          <Header as="h4">Employee Details</Header>
         </Divider>
         {employeeList ? (
           employeeList.employee.length > 0 ? (
