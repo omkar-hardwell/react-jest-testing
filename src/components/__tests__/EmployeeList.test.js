@@ -5,6 +5,8 @@ import { shallow } from "enzyme";
 
 import EmployeeList from "../EmployeeList";
 
+import "../../setupTests.js";
+
 describe("Test EmployeeList component with", () => {
   let wrapper;
 

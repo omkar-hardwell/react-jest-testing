@@ -8,6 +8,7 @@ const EmployeeList = () => {
     fetchDetails();
   }, []);
 
+  // Fetch employee details
   const fetchDetails = () => {
     getEmployeeList().then((res) => setEmployeeList(res));
   };

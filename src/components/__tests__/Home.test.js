@@ -1,9 +1,12 @@
+import React from "react";
 import { Router, MemoryRouter } from "react-router-dom";
 import { act, create } from "react-test-renderer";
 import { screen, render } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 
 import Home from "../Home";
+
+import "../../setupTests.js";
 
 describe("Home page test with", () => {
   it("render a link", () => {
