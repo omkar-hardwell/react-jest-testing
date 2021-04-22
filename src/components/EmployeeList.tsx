@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { Card, Container, Loader } from "semantic-ui-react";
+import { Header, Divider } from "semantic-ui-react";
 
 import { getEmployeeList } from "../Api/dummyAPIs";
 import EmployeeCard from "./EmployeeCard";
-
-import { Header, Divider } from "semantic-ui-react";
+import { IEmployee, IEmployeeList } from "./models";
 
 const EmployeeList = () => {
-  const [employeeList, setEmployeeList] = React.useState(null);
+  const [employeeList, setEmployeeList] = React.useState<IEmployeeList>(null);
   useEffect(() => {
     fetchDetails();
   }, []);
@@ -26,7 +26,7 @@ const EmployeeList = () => {
         {employeeList ? (
           employeeList.employee.length > 0 ? (
             <Card.Group>
-              {employeeList.employee.map((employee) => {
+              {employeeList.employee.map((employee: IEmployee) => {
                 return <EmployeeCard key={employee.id} employee={employee} />;
               })}
             </Card.Group>

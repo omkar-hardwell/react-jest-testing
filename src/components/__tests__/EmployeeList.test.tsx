@@ -4,13 +4,12 @@ import { shallowToJson } from "enzyme-to-json";
 import { shallow } from "enzyme";
 
 import EmployeeList from "../EmployeeList";
+import { IEmployeeList } from "../models";
 
 import "../../setupTests.js";
 
 describe("Test EmployeeList component with", () => {
-  let wrapper;
-
-  const dummyEmployeeList = {
+  const dummyEmployeeList: IEmployeeList = {
     employee: [
       {
         id: 1,
@@ -27,7 +26,7 @@ describe("Test EmployeeList component with", () => {
     ],
   };
   const employeeListNotFound = null;
-  const employeeListWithZeroData = { employee: [] };
+  const employeeListWithZeroData: IEmployeeList = { employee: [] };
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -41,27 +40,21 @@ describe("Test EmployeeList component with", () => {
     /**
      * Snapshot testing
      */
-    React.useState = jest.fn((initialValue) => [dummyEmployeeList, () => {}]);
-    wrapper = shallow(<EmployeeList />);
+    React.useState = jest.fn(() => [dummyEmployeeList, () => {}]);
+    const wrapper = shallow(<EmployeeList />);
 
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it("data not defined, shows loading...", () => {
-    React.useState = jest.fn((initialValue) => [
-      employeeListNotFound,
-      () => {},
-    ]);
-    wrapper = shallow(<EmployeeList />);
+    React.useState = jest.fn(() => [employeeListNotFound, () => {}]);
+    const wrapper = shallow(<EmployeeList />);
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 
   it("zero data found", () => {
-    React.useState = jest.fn((initialValue) => [
-      employeeListWithZeroData,
-      () => {},
-    ]);
-    wrapper = shallow(<EmployeeList />);
+    React.useState = jest.fn(() => [employeeListWithZeroData, () => {}]);
+    const wrapper = shallow(<EmployeeList />);
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });
