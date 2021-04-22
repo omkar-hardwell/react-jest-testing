@@ -7,7 +7,7 @@ import EmployeeCard from "./EmployeeCard";
 import { IEmployee, IEmployeeList } from "./models";
 
 const EmployeeList = () => {
-  const [employeeList, setEmployeeList] = React.useState<IEmployeeList>(null);
+  const [employeeList, setEmployeeList] = React.useState<IEmployeeList>();
   useEffect(() => {
     fetchDetails();
   }, []);
