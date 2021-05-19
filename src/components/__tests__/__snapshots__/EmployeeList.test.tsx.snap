@@ -9,7 +9,7 @@ exports[`Test EmployeeList component with data found 1`] = `
       <Header
         as="h4"
       >
-        Employee Details
+        Employee Details(Testing...)
       </Header>
     </Divider>
     <CardGroup>
@@ -49,7 +49,7 @@ exports[`Test EmployeeList component with data not defined, shows loading... 1`]
       <Header
         as="h4"
       >
-        Employee Details
+        Employee Details(Testing...)
       </Header>
     </Divider>
     <Loader
@@ -69,7 +69,7 @@ exports[`Test EmployeeList component with zero data found 1`] = `
       <Header
         as="h4"
       >
-        Employee Details
+        Employee Details(Testing...)
       </Header>
     </Divider>
     <p>
